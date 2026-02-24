@@ -1,12 +1,11 @@
 #!/bin/bash
 
 source ./common.sh #calling another script
+appname="catalogue"
 check_rootuser  #checking root user access
 nodejs_setup   #calling nodejs function
 system_roboshopuser #roboshop user function
 app_setup
-appname=catalogue
-
 service_file
 systemctl_services
 MONGODB_HOST=mongodb.jarugula.online
