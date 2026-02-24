@@ -15,7 +15,7 @@ MONGODB_HOST=mongodb.jarugula.online
 npm install &>>$logs_file
 validate $? "installing dependencies"
 
-cp $script_dir/mongo.repo /etc/yum.repos.d/mongo.repo
+cp $script_dir/mongodb.repo /etc/yum.repos.d/mongo.repo
 validate $? "copying the mongo repo"
 
 dnf install mongodb-mongosh -y
