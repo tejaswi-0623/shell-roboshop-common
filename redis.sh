@@ -15,6 +15,6 @@ validate $? "installing redis"
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis/redis.conf
 sed -i '/protected-mode/ c protected-mode no' /etc/redis/redis.conf  #c means change in the line from yes to no
 
-systemctl enable redis
+systemctl enable redis &>>$logs_file
 systemctl start redis
 validate $? "enable and start redis"
