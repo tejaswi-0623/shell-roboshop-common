@@ -30,3 +30,6 @@ else
     echo -e "Products already loaded ... $Y SKIPPING $N"
 fi
 
+systemctl restart catalogue
+validate $? "restart catalogue"
+
