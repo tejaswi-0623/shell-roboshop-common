@@ -44,9 +44,6 @@ nodejs_setup(){ #writting function for coomon commands for nodejs in backend scr
     dnf install nodejs -y &>>$logs_file
     validate $? "intsalling nodejs"
     
-    cd /app
-    npm install &>>$logs_file
-    validate $? "installing dependencies"
 }
 
 system_roboshopuser(){
