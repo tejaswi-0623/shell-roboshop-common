@@ -64,12 +64,12 @@ app_setup(){ #creating app folder, downloading the code
     validate $? "download the app code"
 
     rm -rf /app/*
-    VALIDATE $? "Removing existing code" 
+    validate $? "Removing existing code" 
 
     cd /app
     validate $? "moving to app directory"
 
-    unzip /tmp/$appname.zip &>>$logs_file
+    unzip /tmp/$appname.zip 
     validate $? "unzipping the app code"
 
 }
