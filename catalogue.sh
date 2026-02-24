@@ -12,7 +12,7 @@ systemctl_services
 MONGODB_HOST=mongodb.jarugula.online
 
 
-cd /app
+
 npm install &>>$logs_file
 validate $? "installing dependencies"
 
