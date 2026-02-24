@@ -48,7 +48,7 @@ nodejs_setup(){ #writting function for coomon commands for nodejs in backend scr
 
 system_roboshopuser(){
     id roboshop &>>$logs_file #creating system user 
-     if [$? -ne 0 ]; then
+     if [ $? -ne 0 ]; then
        useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop
        validate $? "creating roboshop user"
     else 
