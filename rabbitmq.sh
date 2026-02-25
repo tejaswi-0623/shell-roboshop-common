@@ -3,7 +3,7 @@
 source ./common.sh
 check_rootuser
 
-cp $script_dir/rabbtimq.repo /etc/yum.repos.d/rabbitmq.repo
+cp $script_dir/rabbitmq.repo /etc/yum.repos.d/rabbitmq.repo
 validate $? "copying rabbitmq repo"
 
 dnf install rabbitmq-server -y &>>$logs_file
