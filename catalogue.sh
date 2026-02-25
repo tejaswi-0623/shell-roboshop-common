@@ -16,7 +16,7 @@ print_total_time
 #npm install &>>$logs_file
 #validate $? "installing dependencies"
 
-sytemctl daemon-reload
+systemctl daemon-reload
 validate $? "reload service"
 
 cp $script_dir/mongodb.repo /etc/yum.repos.d/mongo.repo
