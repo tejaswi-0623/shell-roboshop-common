@@ -12,6 +12,8 @@ systemctl_services  #creating systemctl services function
 print_total_time   #to know total time take to execute script
 
 
+npm install &>>$logs_file
+validate $? "installing dependencies"
 
 systemctl restart user
 validate $? "restart user"
