@@ -9,17 +9,17 @@ check_rootuser
 cp mongodb.repo /etc/yum.repos.d/mongo.repo
 validate $? "copying mongo repo"
 
-dnf install mongodb-org -y 
+dnf install mongodb-org -y &>>$logs_file
 validate $? "installing mongodb"
 
-systemctl enable mongod 
+systemctl enable mongod &>>$logs_file
 systemctl start mongod 
 validate $? "enable and start mongodb"
 
-sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$logs_file
 validate $? "allow remote connections"
 
-systemctl restart mongod
+systemctl restart mongod &>>$logs_file
 validate $? "restart mongodb"
 
 print_total_time
