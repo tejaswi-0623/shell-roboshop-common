@@ -15,5 +15,5 @@ print_total_time   #to know total time take to execute script
 npm install &>>$logs_file
 validate $? "installing dependencies"
 
-systemctl restart user
+systemctl restart user &>>$logs_file
 validate $? "restart user"

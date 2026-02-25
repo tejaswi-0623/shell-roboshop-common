@@ -13,5 +13,5 @@ print_total_time
 npm install &>>$logs_file
 validate $? "installing dependencies"
 
-systemctl restart cart
+systemctl restart cart &>>$logs_file
 validate $? "restarting cart"
