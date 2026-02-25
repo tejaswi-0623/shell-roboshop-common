@@ -46,6 +46,18 @@ nodejs_setup(){ #writting function for coomon commands for nodejs in backend scr
     
 }
 
+java_setup(){
+
+    dnf install maven -y &>>$logs_file
+    validate $? "installing maven"
+ 
+    mvn clean package &>>$logs_file
+    VALIDATE $? "Installing and Building $appname"
+
+    mv target/$appname-1.0.jar $appname.jar 
+    VALIDATE $? "Moving and Renaming $appname"
+}
+
 system_roboshopuser(){
     id roboshop &>>$logs_file #creating system user 
      if [ $? -ne 0 ]; then

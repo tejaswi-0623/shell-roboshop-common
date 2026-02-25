@@ -12,3 +12,5 @@ validate $? "enable and start mysql"
 
 mysql_secure_installation --set-root-pass RoboShop@1 &>>$logs_file
 validate $? "setting root user password"
+
+print_total_time
