@@ -31,7 +31,7 @@ else
     echo -e "data is already loaded ... $Y SKIPPING $N"
 fi
 
-systemctl restart "shipping"
-validate $? "restarting shipping"
+systemctl restart "$appname"
+validate $? "restarting $appname"
 
 print_total_time
