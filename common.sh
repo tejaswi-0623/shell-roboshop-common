@@ -53,6 +53,11 @@ java_setup(){
  
 }
 
+python_setup(){
+    dnf install python3 gcc python3-devel -y &>>$logs_file
+    validate $? "installing python"
+}
+
 system_roboshopuser(){
     id roboshop &>>$logs_file #creating system user 
      if [ $? -ne 0 ]; then
