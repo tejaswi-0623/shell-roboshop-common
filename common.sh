@@ -43,6 +43,9 @@ nodejs_setup(){ #writting function for coomon commands for nodejs in backend scr
 
     dnf install nodejs -y &>>$logs_file
     validate $? "intsalling nodejs"
+
+    npm install
+    validate $? "installing dependencies"
     
 }
 

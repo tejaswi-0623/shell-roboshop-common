@@ -9,6 +9,7 @@ app_setup
 service_file
 systemctl_services
 MONGODB_HOST=mongodb.jarugula.online
+print_total_time
 
 
 
