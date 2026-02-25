@@ -58,6 +58,18 @@ python_setup(){
     validate $? "installing python"
 }
 
+nginx_setup(){
+    dnf module disable nginx -y &>>$logs_file
+    validate $? "disable default nginx version"
+
+    dnf module enable nginx:1.24 -y &>>$logs_file
+    validate $? "enable nginx 1.24 version"
+
+    dnf install nginx -y &>>$logs_file
+    validate $? "installing nginx"
+    
+}
+
 system_roboshopuser(){
     id roboshop &>>$logs_file #creating system user 
      if [ $? -ne 0 ]; then
