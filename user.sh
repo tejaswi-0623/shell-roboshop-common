@@ -13,3 +13,5 @@ print_total_time   #to know total time take to execute script
 
 
 
+systemctl restart user
+validate $? "restart user"
