@@ -9,8 +9,8 @@ validate $? "copying rabbitmq repo"
 dnf install rabbitmq-server -y &>>$logs_file
 validate $? "installing rabbitmq"
 
-systemctl enable rabbitmq &>>$logs_file
-systemctl start rabbitmq
+systemctl enable rabbitmq-server &>>$logs_file
+systemctl start rabbitmq-server
 validate $? "enable and start rabbitmq"
 
 rabbitmqctl add_user roboshop roboshop123
