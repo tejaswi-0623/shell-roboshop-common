@@ -51,11 +51,6 @@ java_setup(){
     dnf install maven -y &>>$logs_file
     validate $? "installing maven"
  
-    mvn clean package &>>$logs_file
-    VALIDATE $? "Installing and Building $appname"
-
-    mv target/$appname-1.0.jar $appname.jar 
-    VALIDATE $? "Moving and Renaming $appname"
 }
 
 system_roboshopuser(){

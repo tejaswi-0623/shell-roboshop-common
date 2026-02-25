@@ -10,6 +10,13 @@ service_file
 systemctl_services
 MYSQL_HOST=mysql.jarugula.online
 
+
+mvn clean package &>>$logs_file
+validate $? "Installing and Building $appname"
+
+mv target/$appname-1.0.jar $appname.jar 
+validate $? "Moving and Renaming $appname"
+
 dnf install mysql -y &>>$logs_file
 validate $? "installing mysql"
 
